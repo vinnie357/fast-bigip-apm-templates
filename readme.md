@@ -1,4 +1,4 @@
-# fast-nginx
+# fast-bigip-apm
 bigip APM policy templates for FAST
 
 # Introduction
