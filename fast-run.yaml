@@ -1,13 +1,13 @@
 parameters:
     fast_docker_path: ../fast-docker
     fast_container: fastdock
-  template: |
-    cd {{fast_docker_path}}
-    docker build --tag {{fast_container}} .
-    cd -
-    foo=`pwd`/templates/
-    echo $foo
-    docker run \
-      -p 3000:3000 \
-      -v $foo:/var/config/templates:ro \
-      {{fast_container}}
+template: |
+  cd {{fast_docker_path}}
+  docker build --tag {{fast_container}} .
+  cd -
+  templates=`pwd`/templates/
+  echo $foo
+  docker run \
+    -p 3000:3000 \
+    -v $templates:/var/config/templates:ro \
+    {{fast_container}}
